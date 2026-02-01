@@ -14,7 +14,7 @@ async function checkWeather(city){
     document.querySelector(".weather-icon").style.display="block";
     document.querySelector(".city").innerHTML=data.name;
     document.querySelector(".temp").innerHTML=Math.round(data.main.temp) + "°C";
-    document.querySelector(".Humidity").innerHTML=data.main.humidity + "%";
+    document.querySelector(".humidity").innerHTML=data.main.humidity + "%";
     document.querySelector(".windspeed").innerHTML=data.wind.speed + " km/h";
     if(data.weather[0].main=="Clouds"){
       document.querySelector(".weather-icon img").src="images/Cloudy-weather.jpg";
