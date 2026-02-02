@@ -1,4 +1,5 @@
 .card {
+  display:flex;
   justify-content: center;
   algin-items: center;
 }
