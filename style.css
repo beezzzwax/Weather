@@ -1,1 +1,19 @@
-
+.city {
+  text-align: center;
+  font-size: 75
+}
+.temp {
+  text-align: center;
+}
+.humidty {
+  text-align: center;
+}
+.weather {
+  text-align: center;
+}
+.wind {
+  text-align: center;
+}
+.search {
+  text-align: center;
+}
