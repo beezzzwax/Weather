@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .city {
   text-align: center;
   font-size: 75
@@ -16,4 +17,10 @@
 }
 .search {
   text-align: center;
+=======
+.card {
+  display:flex;
+  justify-content: center;
+  algin-items: center;
+>>>>>>> c123f1ea3507da0fcf17b800b63eab564faef790
 }
