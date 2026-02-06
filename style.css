@@ -57,4 +57,9 @@
   .mysidenav {padding-top: 15px;}
   .mysidenav a {font-size: 18px;}
 }
+body {
+  align-item= center;
+  display: flex;
+  justify-content: center;
+}
 
