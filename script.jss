@@ -41,4 +41,3 @@ async function checkWeather(city) {
   document.querySelector(".weather-icon img").src =
     iconMap[weather] || "images/default-weather.jpg";
 }
-checkWeather(city)
