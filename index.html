@@ -7,31 +7,40 @@
     <script src="Script.js" defer></script>
 </head>
 <body>
-    <div class="mysidenav" class:'sidenav'>
+    <div class="mysidenav sidenav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <script src='Script.js'></script>
     </div>
+
     <span class="openbtn" onclick="openNav()">&#9776;</span>
+
     <div id="main">
         <h1>Weather App</h1>
-    <div class="card">
-        <div class="search">
-            <input type="text" placeholder="Search...">
-            <button><img src="Search.png" alt="Search Icon". width="auto" height="16">
-                </button>
-        </div>
-        <div class='error'>
-            <p>Not a city/Country</p>
-        <div class="weather">
-            <h3 class="city">Weather</h3>
-            <div class="temp">25°C</div>
-            <div class="condition">Sunny</div>
-            <div class="humidity">Humidity: 40%</div>
-            <div class="wind">Wind: 10 km/h</div>
-            <script src='Script.jss'></script>
+
+        <div class="card">
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <button><img src="Search.png" alt="Search Icon" width="auto" height="16"></button>
+            </div>
+
+            <div class="error">
+                <p>Not a city/Country</p>
+            </div>
+
+            <div class="weather">
+                <h3 class="city">Weather</h3>
+                <div class="temp">25°C</div>
+
+                <div class="weather-icon">
+                    <img src="" alt="Weather Icon">
+                </div>
+
+                <div class="humidity">Humidity: 40%</div>
+                <div class="wind">Wind: 10 km/h</div>
+            </div>
         </div>
     </div>
 </body>
 </html>
+
