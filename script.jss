@@ -8,7 +8,7 @@ function closeNav() {
 const weatherform = document.querySelector(".search");
 const search = document.querySelector(".search-input");
 const card = document.querySelector(".card");
-const apiKey = "YOUR_API_KEY";
+const apiKey = "960575f5688b5edd68105b8c9114e151";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
