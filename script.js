@@ -1,4 +1,3 @@
-
 let tempContainer = document.querySelector(".temp");
 let icon = document.querySelector("#icon");
 let weatherType = document.querySelector("#weather-type");
@@ -9,10 +8,21 @@ let locationContainer = document.querySelector("#location");
 const apiKey = "960575f5688b5edd68105b8c9114e151";
 
 
+navigator.geolocation.getCurrentPosition(
+  function (position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    apiFetchByCoords(lat, lon);
+  },
+  function () {
+    apiFetch("Sydney");
+  }
+);
+
 function submitLocation(event) {
   event.preventDefault();
   let loc = document.querySelector("#location-input").value.trim();
-
   apiFetch(loc);
 }
 
@@ -21,25 +31,45 @@ function apiFetch(loc) {
 
   fetch(api)
     .then((res) => res.json())
-    .then((data) => {
-      tempContainer.innerHTML = data.main.temp;
-      icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-      weatherType.innerHTML = data.weather[0].description;
-      humidity.innerHTML = data.main.humidity;
-      windSpeed.innerHTML = `${(data.wind.speed * 3.6).toFixed(2)} Km/h`; 
-      locationContainer.innerHTML = `${data.name}, ${data.sys.country}`;
-      
-      const weatherMain = data.name[0].main.toLowerCase();
-      const country = data.sys.country.toLowerCase();
-      const backgroud = `https://source.unsplash.com/1600x900/?${weatherMain},${country}`;
-      document.body.style.backgroundImage = `url(${bgUrl})`;
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundPosition = "center";
-      document.body.style.backgroundRepeat = "no-repeat";
-    })
-    .catch((err) => {
-      alert("City Not Found");
-    });
+    .then((data) => updateUI(data))
+    .catch(() => alert("City Not Found"));
 }
 
-apiFetch("australia");
+function apiFetchByCoords(lat, lon) {
+  const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+  fetch(api)
+    .then((res) => res.json())
+    .then((data) => updateUI(data));
+}
+
+function updateUI(data) {
+  tempContainer.innerHTML = data.main.temp;
+  icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  weatherType.innerHTML = data.weather[0].description;
+  humidity.innerHTML = data.main.humidity;
+  windSpeed.innerHTML = `${(data.wind.speed * 3.6).toFixed(2)} Km/h`;
+  locationContainer.innerHTML = `${data.name}, ${data.sys.country}`;
+
+  let condition = data.weather[0].main.toLowerCase();
+  let backgroundImage = "";
+
+  switch (condition) {
+    case "clouds":
+      backgroundImage = "/images/cloudy.jpg";
+      break;
+    case "rain":
+      backgroundImage = "/images/rainy.jpg";
+      break;
+    case "snow":
+      backgroundImage = "/images/snowy.jpg";
+      break;
+    case "clear":
+      backgroundImage = "/images/sunny.jpg";
+      break;
+    default:
+      backgroundImage = "/images/default.jpg";
+  }
+
+  document.body.style.backgroundImage = `url('${backgroundImage}')`;
+}

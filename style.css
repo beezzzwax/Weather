@@ -31,7 +31,6 @@ body {
   height: 100vh;
   width: 100%;
   flex-direction: column;
-  background-image: url('https://source.unsplash.com/1600x900/?landscape');
 }
 .search-box > button {
   width: 25px;
