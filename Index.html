@@ -1,39 +1,48 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="Script.jss" defer></script>
-</head>
-<body>
-    <div class="mysidenav" id="mySidenav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <script src='Script.js'></script>
-    </div>
-    <span class="openbtn" onclick="openNav()">&#9776;</span>
-    <div id="main">
-        <h1>Weather App</h1>
-    <div class="card">
-        <form class="search">
-            <input type="text" class="search-input" placeholder="Search...">
-            <button><img src="Search.png" alt="Search Icon". width="auto" height="16">
-                </button>
-            </form>
-        <div class='error'>
-            <p>Not a city/Country</p>
-        <div class="weather">
-            <h3 class="city">Weather</h3>
-            <div class="temp">25°C</div>
-            <div class="condition">Sunny</div>
-            <div class="humidity">Humidity: 40%</div>
-            <div class="wind">Wind: 10 km/h</div>
-            <script src='Script.jss'></script>
-        </div>
-    </div>
-    <script src="script.jss" defer></script>
-</body>
-</html>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="flex">
+  <form class="search-box flex" onsubmit="submitLocation(event)">
+    <input type="search" placeholder="enter location" id="location-input" required>
+    <button type="submit"><img src="Search.png" alt="search icon" width ="20px" height="auto"></button>
+  </form>
+
+  <div class="container flex">
+    <div class="temperature flex">
+      <img id="icon" alt="weather-icon">
+      <div class="temp">
+
+      </div>
+    </div>
+    <div class="weather-info flex">
+      <p id="weather-type"></p>
+      <table>
+        <tr>
+          <th>Humidity</th>
+          <td>:</td>
+          <td id="humidity"></td>
+        </tr>
+        <tr>
+          <th>Wind Speed</th>
+          <td>:</td>
+          <td id="wind-speed"></td>
+        </tr>
+        <tr>
+          <th>Location</th>
+          <td>:</td>
+          <td id="location"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
