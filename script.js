@@ -31,7 +31,7 @@ function apiFetch(loc) {
 
   fetch(api)
     .then((res) => res.json())
-    .then((data) => updateUI(data))
+    .then((data) => display(data))
     .catch(() => alert("City Not Found"));
 }
 
@@ -40,10 +40,10 @@ function apiFetchByCoords(lat, lon) {
 
   fetch(api)
     .then((res) => res.json())
-    .then((data) => updateUI(data));
+    .then((data) => display(data));
 }
 
-function updateUI(data) {
+function display(data) {
   tempContainer.innerHTML = data.main.temp;
   icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   weatherType.innerHTML = data.weather[0].description;
@@ -56,19 +56,19 @@ function updateUI(data) {
 
   switch (condition) {
     case "clouds":
-      backgroundImage = "/images/cloudy.jpg";
+      backgroundImage = "images/clouds.gif";
       break;
     case "rain":
-      backgroundImage = "/images/rainy.jpg";
+      backgroundImage = "images/rainy.gif";
       break;
     case "snow":
-      backgroundImage = "/images/snowy.jpg";
+      backgroundImage = "images/snowy.gif";
       break;
     case "clear":
-      backgroundImage = "/images/sunny.jpg";
+      backgroundImage = "images/sun.gif";
       break;
     default:
-      backgroundImage = "/images/default.jpg";
+      backgroundImage = "images/default.jpg";
   }
 
   document.body.style.backgroundImage = `url('${backgroundImage}')`;
