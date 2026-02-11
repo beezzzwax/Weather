@@ -7,49 +7,52 @@
   <title>Weather</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<div>
-          <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0) " class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="https://github.com/beezzzwax/bruh">Home</a>
-            <a href="https://beezzzwax.github.io/Weather/">Weather</a>
-            <a href="#">Contact</a>
-        </div>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-        <div id="main"></div>
-</div>
-<body class="flex">
-  <form class="search-box flex" onsubmit="submitLocation(event)">
-    <input type="search" placeholder="enter location" id="location-input" required>
-    <button type="submit"><img src="Images/Search.png" alt="search icon" width ="20px" height="auto"></button>
-  </form>
 
-  <div class="container flex">
-    <div class="temperature flex">
-      <img id="icon" alt="weather-icon">
-      <div class="temp">
 
-      </div>
-    </div>
-    <div class="weather-info flex">
-      <p id="weather-type"></p>
-      <table>
-        <tr>
-          <th>Humidity</th>
-          <td>:</td>
-          <td id="humidity"></td>
-        </tr>
-        <tr>
-          <th>Wind Speed</th>
-          <td>:</td>
-          <td id="wind-speed"></td>
-        </tr>
-        <tr>
-          <th>Location</th>
-          <td>:</td>
-          <td id="location"></td>
-        </tr>
-      </table>
-    </div>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0) " class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="https://beezzzwax.github.io/bruh/#">Home</a>
+    <a href="https://beezzzwax.github.io/Weather/">Weather</a>
+    <a href="#">Contact</a>
+  </div>
+  <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <div id="main"></div>
+
+  <div class="flex">
+   <form class="search-box" onsubmit="submitLocation(event)">
+     <input type="search" placeholder="enter location" id="location-input" required>
+     <button type="submit"><img src="Images/Search.png" alt="search icon" width ="20px" height="auto"></button>
+   </form>
+
+   <div class="container flex">
+     <div class="temperature flex">
+       <img id="icon" alt="weather-icon">
+       <div class="temp">
+
+       </div>
+     </div>
+     <div class="weather-info flex">
+       <p id="weather-type"></p>
+       <table>
+         <tr>
+           <th>Humidity</th>
+           <td>:</td>
+           <td id="humidity"></td>
+         </tr>
+         <tr>
+           <th>Wind Speed</th>
+           <td>:</td>
+           <td id="wind-speed"></td>
+         </tr>
+         <tr>
+           <th>Location</th>
+           <td>:</td>
+           <td id="location"></td>
+         </tr>
+       </table>
+     </div>
+   </div>
   </div>
   <script src="script.js"></script>
 </body>
