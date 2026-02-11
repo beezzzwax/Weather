@@ -56,19 +56,19 @@ function display(data) {
 
   switch (condition) {
     case "clouds":
-      backgroundImage = "images/clouds.gif";
+      backgroundImage = "Images/clouds.gif";
       break;
     case "rain":
-      backgroundImage = "images/rainy.gif";
+      backgroundImage = "Images/rainy.gif";
       break;
     case "snow":
-      backgroundImage = "images/snowy.gif";
+      backgroundImage = "Images/snowy.gif";
       break;
     case "clear":
-      backgroundImage = "images/sun.gif";
+      backgroundImage = "Images/sun.gif";
       break;
     default:
-      backgroundImage = "images/default.jpg";
+      backgroundImage = "Images/default.jpg";
   }
 
   document.body.style.backgroundImage = `url('${backgroundImage}')`;
