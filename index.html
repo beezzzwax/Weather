@@ -7,9 +7,8 @@
   <title>Weather</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="flex">
-        <div id="mySidenav" class="sidenav">
+<body>
+          <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0) " class="closebtn" onclick="closeNav()">&times;</a>
             <a href="index.html">Home</a>
             <a href="#">Weather</a>
@@ -18,6 +17,8 @@
         </div>
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         <div id="main"></div>
+</body>
+<body class="flex">
   <form class="search-box flex" onsubmit="submitLocation(event)">
     <input type="search" placeholder="enter location" id="location-input" required>
     <button type="submit"><img src="Images/Search.png" alt="search icon" width ="20px" height="auto"></button>
