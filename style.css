@@ -49,7 +49,6 @@ body {
   border: 0;
   cursor: pointer;
   background: transparent;
-\
 }
 
 .container {
@@ -137,7 +136,7 @@ table tr th {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  background: url(images/images.jpg)
+  background: url(images/images.jpg);
   background-size: cover;
 }
 
@@ -149,4 +148,11 @@ table tr th {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+.button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size:40px;
+  width:50px;
 }

@@ -44,7 +44,7 @@ function apiFetchByCoords(lat, lon) {
 }
 
 function display(data) {
-  tempContainer.innerHTML = data.main.temp;
+  tempContainer.innerHTML = Math.round(data.main.temp) + "°C";
   icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   weatherType.innerHTML = data.weather[0].description;
   humidity.innerHTML = data.main.humidity;
@@ -74,7 +74,7 @@ function display(data) {
   document.body.style.backgroundImage = `url('${backgroundImage}')`;
 }
 function openNav() {
-  document.getElementById("mySidenav").style.width = "50px";
+  document.getElementById("mySidenav").style.width = "250px";
 }
 
 function closeNav() {
