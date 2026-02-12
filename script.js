@@ -74,7 +74,7 @@ function display(data) {
   document.body.style.backgroundImage = `url('${backgroundImage}')`;
 }
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "50px";
 }
 
 function closeNav() {
