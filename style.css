@@ -137,10 +137,12 @@ table tr th {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  background: url(images/images.jpg)
+  background-size: cover;
 }
 
 #main {
-  transition: margin-left .5s;
+  transition: margin-left 1s;
   padding: 20px;
 }
 
